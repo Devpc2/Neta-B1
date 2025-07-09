@@ -256,6 +256,25 @@
   margin-bottom: 20px;
 }
 
+#nav-menu #close-menu {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  display: none; /* Masqué par défaut */
+  z-index: 1002;
+}
+
+#nav-menu.open #close-menu {
+  display: block; /* Affiché uniquement quand le menu est ouvert */
+}
+
+
+
   </style>
 </head>
 <body>
@@ -273,6 +292,7 @@
 
     <button id="nav-toggle" aria-label="Menu">☰</button>
     <nav id="nav-menu">
+        <button id="close-menu" aria-label="Fermer le menu">✕</button>
       <a href="#hero"    class="active">Accueil</a>
       <a href="#stats">Caractéristiques</a>
       <a href="#features">Avantages</a>
@@ -479,6 +499,11 @@
     document.querySelectorAll('section').forEach(section => {
       observer.observe(section);
     });
+
+    document.getElementById('close-menu').addEventListener('click', () => {
+  navMenu.classList.remove('open');
+});
+
   </script>
 </body>
 </html>
