@@ -216,10 +216,52 @@
         margin:0; text-decoration:none;
       }
     }
+    :root {
+      --primary: #1e3a8a;
+      --accent:  #3b82f6;
+      --dark:    #0f172a;
+      --light:   #f8fafc;
+      --font:    'Poppins', sans-serif;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; font-family:var(--font); }
+    html, body { background:var(--light); color:var(--dark); overflow-x:hidden; scroll-behavior:smooth; }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 20px;
+      opacity: 0; transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Hamburger menu click outside */
+    body.menu-open::after {
+      content: '';
+      position: fixed; top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    section#contact {
+  padding-top: 200px !important;
+}
+#contact h2 {
+  margin-bottom: 20px;
+}
+
   </style>
 </head>
 <body>
+  <!-- ... tout le contenu HTML précédent reste inchangé ... -->
 
+  
   <div id="preloader"></div>
   <div id="progress"></div>
 
@@ -345,7 +387,15 @@
     Commander maintenant via WhatsApp
   </a>
 
+
+  <a href="https://wa.me/237658426535?text=Bonjour%2C%20j%27ai%20visité%20votre%20site%20https%3A%2F%2Fdevpc2.github.io%2FNeta-B1%2F%20et%20je%20souhaite%20commander%20le%20produit%20NETA%20B1." class="btn-buy" target="_blank">
+    Commander maintenant via WhatsApp
+  </a>
+
   <script>
+    // ... tous les scripts précédents restent ...
+
+
     // Préloader
     window.addEventListener('load', () => {
       const pre = document.getElementById('preloader');
@@ -402,6 +452,32 @@
         }
       };
       new IntersectionObserver(e => { if (e[0].isIntersecting) update(); }, { threshold:1 }).observe(cnt);
+    });
+
+    // Fermer le menu si on clique en dehors
+    document.addEventListener('click', function(e) {
+      const navMenu = document.getElementById('nav-menu');
+      const toggle = document.getElementById('nav-toggle');
+      if (navMenu.classList.contains('open')) {
+        if (!navMenu.contains(e.target) && !toggle.contains(e.target)) {
+          navMenu.classList.remove('open');
+        }
+      }
+    });
+
+    // Sections fade uniquement section active
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0.4 });
+
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
     });
   </script>
 </body>
