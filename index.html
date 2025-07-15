@@ -389,6 +389,77 @@
         padding: 10px 0 !important;
       }
     }
+    /* Responsive professionnel pour la section NETA B1 */
+    @media (max-width: 768px) {
+      section#neta-b1 > div {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 18px !important;
+        padding: 18px 4vw 18px 4vw !important;
+        max-width: 98vw !important;
+      }
+      section#neta-b1 [id="main-fiche-img"] {
+        max-width: 80vw !important;
+        max-height: 180px !important;
+        margin: 0 auto 10px auto !important;
+        display: block !important;
+      }
+      section#neta-b1 .mini-fiche-img {
+        width: 48px !important;
+        height: 48px !important;
+      }
+      section#neta-b1 > div > div:first-child > div {
+        gap: 10px !important;
+        margin-top: 10px !important;
+        justify-content: center !important;
+      }
+      section#neta-b1 > div > div:last-child {
+        gap: 10px !important;
+        padding: 0 !important;
+        align-items: center !important;
+      }
+      section#neta-b1 h2 {
+        font-size: 1.2rem !important;
+        margin-bottom: 8px !important;
+        text-align: center !important;
+      }
+      section#neta-b1 ul {
+        font-size: 0.98rem !important;
+        line-height: 1.5 !important;
+        text-align: left !important;
+        margin: 0 auto 10px auto !important;
+        max-width: 95vw !important;
+      }
+      section#neta-b1 [style*="display:flex;"][style*="gap:24px;"] {
+        flex-direction: column !important;
+        gap: 8px !important;
+        align-items: center !important;
+      }
+      section#neta-b1 [style*="font-size:2.1rem;"] {
+        font-size: 1.3rem !important;
+        text-align: center !important;
+      }
+      section#neta-b1 [style*="color:#555;"] {
+        text-align: center !important;
+      }
+      section#neta-b1 a[download] {
+        width: 100%;
+        font-size: 1rem;
+        padding: 10px 0 !important;
+        margin-top: 10px !important;
+      }
+    }
+    @media (max-width: 480px) {
+      section#neta-b1 > div {
+        padding: 10px 2vw 10px 2vw !important;
+      }
+      section#neta-b1 h2 {
+        font-size: 1rem !important;
+      }
+      section#neta-b1 ul {
+        font-size: 0.92rem !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -468,7 +539,7 @@
         <!-- Bouton de téléchargement bien visible en bas du cadre -->
         <div style="text-align:center; margin-top:30px;">
           <a href="Fiche_Technique.pdf" download="Fiche_Technique.pdf" type="application/octet-stream" style="display:inline-block; background:var(--primary); color:#fff; padding:12px 28px; border-radius:8px; font-weight:600; text-decoration:none; box-shadow:0 2px 8px rgba(30,58,138,0.10); transition:background .3s;">
-            ⬇️ Consulter la fiche technique
+            ⬇️ Télécharger la fiche technique
           </a>
         </div>
       </div>
