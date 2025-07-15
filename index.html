@@ -335,6 +335,60 @@
       background: rgba(0,0,0,0.3);
       z-index: 1000;
     }
+    @media (max-width: 600px) {
+      section#fiche-technique {
+        padding: 30px 2vw !important;
+      }
+      section#fiche-technique > div {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 18px !important;
+        padding: 18px 6vw 18px 6vw !important;
+        max-width: 98vw !important;
+      }
+      section#fiche-technique [id="main-fiche-img"] {
+        max-width: 80vw !important;
+        max-height: 180px !important;
+        margin: 0 auto 10px auto !important;
+      }
+      section#fiche-technique .mini-fiche-img {
+        width: 48px !important;
+        height: 48px !important;
+      }
+      section#fiche-technique > div > div:first-child > div {
+        gap: 10px !important;
+        margin-top: 10px !important;
+      }
+      section#fiche-technique > div > div:last-child {
+        gap: 10px !important;
+        padding: 0 !important;
+      }
+      section#fiche-technique h2 {
+        font-size: 1.2rem !important;
+        margin-bottom: 8px !important;
+      }
+      section#fiche-technique ul {
+        font-size: 0.98rem !important;
+        line-height: 1.5 !important;
+      }
+      section#fiche-technique [style*="display:flex;"][style*="gap:24px;"] {
+        flex-direction: column !important;
+        gap: 8px !important;
+        align-items: center !important;
+      }
+      section#fiche-technique [style*="font-size:2.1rem;"] {
+        font-size: 1.3rem !important;
+        text-align: center !important;
+      }
+      section#fiche-technique [style*="color:#555;"] {
+        text-align: center !important;
+      }
+      section#fiche-technique a[download] {
+        width: 100%;
+        font-size: 1rem;
+        padding: 10px 0 !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -350,7 +404,7 @@
     <nav id="nav-menu">
       <button id="close-menu" aria-label="Fermer le menu">✕</button>
       <a href="#hero"    class="active">Accueil</a>
-      <a href="#stats">Caractéristiques</a>
+      <a href="#neta-b1">NETA B1</a>
       <a href="#features">Avantages</a>
       <a href="#awards">Récompenses</a>
       <a href="#gallery">Galerie</a>
@@ -366,22 +420,61 @@
     <div class="scroll-down">⌄</div>
   </section>
 
-  <section id="stats">
-    <h2>Caractéristiques clés</h2>
-    <div class="stats">
-      <div class="stat">
-        <div class="number" data-target="15000">0</div>
-        <p>mAh de capacité</p>
+  <section id="neta-b1" style="background:#f4f6fb; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:60px 10px;">
+    <div style="background:#fff; border-radius:22px; box-shadow:0 6px 32px rgba(30,58,138,0.10); display:flex; flex-direction:row; align-items:center; justify-content:center; max-width:900px; width:100%; padding:40px 32px 32px 32px; gap:40px;">
+      <!-- Image principale à gauche -->
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+        <img id="main-fiche-img" src="img/NETA B1.png" alt="NETA B1" style="max-width:260px; max-height:260px; width:100%; height:auto; object-fit:contain; background:transparent; display:block; border-radius:18px; box-shadow:0 2px 12px rgba(30,58,138,0.07);"/>
+        <div style="display:flex; flex-direction:row; align-items:center; justify-content:center; gap:22px; margin-top:18px;">
+          <div style="background:#fff; border-radius:12px; box-shadow:0 2px 8px rgba(30,58,138,0.07); width:70px; height:70px; display:flex; align-items:center; justify-content:center;">
+            <img class="mini-fiche-img" src="img/NETA B1.png" alt="Mini NETA B1" style="width:60px; height:60px; object-fit:cover; border-radius:8px; background:transparent; border:none; cursor:pointer;"/>
+          </div>
+          <div style="background:#fff; border-radius:12px; box-shadow:0 2px 8px rgba(30,58,138,0.07); width:70px; height:70px; display:flex; align-items:center; justify-content:center;">
+            <img class="mini-fiche-img" src="img/img2.png" alt="Mini 2" style="width:60px; height:60px; object-fit:cover; border-radius:8px; background:transparent; border:none; cursor:pointer;"/>
+          </div>
+          <div style="background:#fff; border-radius:12px; box-shadow:0 2px 8px rgba(30,58,138,0.07); width:70px; height:70px; display:flex; align-items:center; justify-content:center;">
+            <img class="mini-fiche-img" src="img/img4.png" alt="Mini 4" style="width:60px; height:60px; object-fit:cover; border-radius:8px; background:transparent; border:none; cursor:pointer;"/>
+          </div>
+        </div>
       </div>
-      <div class="stat">
-        <div class="number" data-target="22.5">22.5</div>
-        <p>W de charge rapide</p>
-      </div>
-      <div class="stat">
-        <div class="number" data-target="6">0</div>
-        <p>mois de garantie</p>
+      <!-- Infos produit à droite -->
+      <div style="flex:2; display:flex; flex-direction:column; justify-content:center; gap:18px;">
+        <h2 style="color:#222; font-size:1.7rem; font-weight:700; margin-bottom:6px;">Power Bank NETA B1</h2>
+        <ul style="list-style:none; padding:0; margin:0; color:#444; font-size:1.08rem; line-height:1.7;">
+          <li>🔋 Indicateur de charge en temps réel</li>
+          <li>☀️ Panneau solaire intégré</li>
+          <li>🔌 Double sortie USB</li>
+          <li>⚡ Bouton multifonction</li>
+          <li>🔁 Double entrée (Type-C & Lightning)</li>
+          <li>📱 Entrée Android (Micro-USB)</li>
+        </ul>
+        <!-- Ajout des caractéristiques clés ici -->
+        <div style="margin-top:18px;">
+          <div style="display:flex; gap:24px; flex-wrap:wrap; justify-content:flex-start;">
+            <div style="text-align:center; flex:1 1 120px;">
+              <div style="font-size:2.1rem; color:var(--accent); font-weight:700;">15 000</div>
+              <div style="color:#555;">mAh de capacité</div>
+            </div>
+            <div style="text-align:center; flex:1 1 120px;">
+              <div style="font-size:2.1rem; color:var(--accent); font-weight:700;">22,5</div>
+              <div style="color:#555;">W de charge rapide</div>
+            </div>
+            <div style="text-align:center; flex:1 1 120px;">
+              <div style="font-size:2.1rem; color:var(--accent); font-weight:700;">6</div>
+              <div style="color:#555;">mois de garantie</div>
+            </div>
+          </div>
+        </div>
+        <!-- Bouton de téléchargement bien visible en bas du cadre -->
+        <div style="text-align:center; margin-top:30px;">
+          <a href="Fiche_Technique.pdf" download="Fiche_Technique.pdf" type="application/octet-stream" style="display:inline-block; background:var(--primary); color:#fff; padding:12px 28px; border-radius:8px; font-weight:600; text-decoration:none; box-shadow:0 2px 8px rgba(30,58,138,0.10); transition:background .3s;">
+            ⬇️ Consulter la fiche technique
+          </a>
+        </div>
       </div>
     </div>
+    <!-- Galerie de miniatures -->
+    
   </section>
 
   <section id="features">
@@ -409,7 +502,7 @@
       </div>
       <div class="card">
         <h3>Réf : P2251</h3>
-        <p>Modèle : NETA 31 • 15000 mAh/10 W • Partenaire : KUMODISTER.</p>
+        <p>Modèle : NETA B1 • 15000 mAh/10 W • Partenaire : KUMODISTER.</p>
       </div>
     </div>
   </section>
@@ -442,7 +535,9 @@
           <img src="img/award4.jpg" alt="award4" />
           <img src="img/award5.jpg" alt="award5" />
           <img src="img/award6.jpg" alt="award6" />
-        </div>
+          <img src="img/award7.jpg" alt="award7" />
+          <img src="img/award8.jpg" alt="award8" />
+        </div>    
       </div>
       <button class="carousel-btn right">›</button>
     </div>
@@ -744,6 +839,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+  </script>
+  <script>
+  // Script pour la galerie horizontale de la fiche technique
+  document.addEventListener('DOMContentLoaded', function() {
+    const mainImg = document.getElementById('main-fiche-img');
+    const miniImgs = document.querySelectorAll('.mini-fiche-img');
+    miniImgs.forEach(img => {
+      img.addEventListener('click', function() {
+        mainImg.src = this.src;
+        miniImgs.forEach(i => i.parentElement.style.boxShadow = '0 2px 8px rgba(30,58,138,0.07)');
+        this.parentElement.style.boxShadow = '0 0 0 2.5px var(--accent)';
+      });
+    });
+  });
   </script>
 </body>
 </html>
