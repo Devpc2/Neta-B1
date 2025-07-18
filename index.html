@@ -651,7 +651,7 @@
   <section id="video-refrigeration" style="background:#f4f6fb; min-height:60vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:60px 10px;">
     <h2 style="color:#1e3a8a; font-size:2.2rem; margin-bottom:24px; text-align:center;">Journée Mondiale de la Réfrigération 2025</h2>
     <div style="width:100%; max-width:720px; box-shadow:0 6px 32px rgba(30,58,138,0.10); border-radius:18px; background:#fff; padding:24px 12px; display:flex; flex-direction:column; align-items:center;">
-      <video id="videoRefrigeration" controls style="width:100%; max-width:680px; border-radius:12px; box-shadow:0 2px 12px rgba(30,58,138,0.07); background:#000;">
+      <video id="videoRefrigeration" controls autoplay muted style="width:100%; max-width:680px; border-radius:12px; box-shadow:0 2px 12px rgba(30,58,138,0.07); background:#000;">
         <source src="video/journee_mondiale_refrigeration_2025.mp4" type="video/mp4">
         Votre navigateur ne supporte pas la lecture vidéo.
       </video>
@@ -945,8 +945,8 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
       var vid = document.getElementById('videoRefrigeration');
       if(vid) {
-        vid.muted = false;
-        vid.play();
+        vid.muted = true; // D'abord muet pour l'autoplay
+        vid.play().catch(() => {});
       }
     }, 500);
   }
